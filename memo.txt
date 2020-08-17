@@ -1,0 +1,397 @@
+한글 입숨 -> 한글 아무 말 생성기
+/*서식*/
+br
+em
+b
+s
+big/small 기본 폰트보다 조금 크게
+sub 아래첨자
+sup 윗첨자
+mark 형광표시
+hr
+
+/*목록 만들기*/
+ol > li 순서가 있는 목록
+ul > li 순서가 없는 목록
+
+/*링크, 이미지*/
+외부 링크나 파일 링크 하기: a (anchor)
+<a href="웹사이트">Naver</a>
+a -> tag href-> attribute(속성) hyperlink reference
+이미지 html 문서에 넣기: img
+<img src="">
+
+<a href="웹사이트><img src="..."></a>
+
+<a href="http://www.google.com" target="_blank">Google</a>
+새로운 탭으로 가기(target="_blank")
+
+<a href="http://www.google.com" target="_blank" title="구글사이트로 이동">Google</a>
+title은 hover 했을때 말풍선 나옴
+
+<img src="" alt="">
+<a href=""><img src="" alt=""></a>
+사진에 클릭하면 링크로 간다
+
+/*CSS*/
+CSS -> HTML 문서 내에 HTML 태그를 선택해서 디자인하고 배치하는 역할을 한다
+
+직접 속성에 넣기
+html header에 작성
+css 파일 링크 통해서
+
+CSS 기본 문법
+body {
+  color: navy;
+}
+
+Selector {
+  Property: value;
+}
+
+h1 {color: blue; font-size: 12px;}
+Selector {Declaration(Property: value); Declaration(Property: value);}
+
+/*CSS 선택자*/
+
+선택자 종류
+태그 선택자/클래스 선택자/아이디 선택자/태그와 함께 쓰는 선택자
+
+그룹 선택자
+그룹 선택자/하위 선택자/전체 선택자
+
+하위 선택자
+p b {
+
+}
+
+CSS 적용 우선순위
+important(최대한 피하자)
+inline (직접 tag 안에 style 넣기)
+id
+class
+tag selector style
+
+/*CSS 서식관련 속성(Text 스타일)*/
+내용이 요소의 크기를 벗어났을때: 감추기
+overflow: hidden;
+
+스크롤할 때 배경 이미지 부착 여부를 지정: 움직이지 않고 고정
+background-attachment: fixed;
+
+기본 서식 스타일
+font-size -> px/em/%/pt/rem
+font-weight(두께) -> 100-900 bold(기본값)/bolder/lighter/normal(bold빼기)
+참고 : h1은 기본적으로 font-weight가 bold 설정 되어 있음
+line-height(줄 간격을 지정) -> px/em(추천)/pt/%/rem
+- 일반적으로 body에 넣음
+- font-size를 키우면 line-height(px)가 좁아진 느낌이 생기므로 늘려줘야 함 -> 해결책 : em을 사용, em은 비율이므로 자동으로 바뀜
+font-family -> font name
+font-style(문자 스타일(기울림체)) -> normal/italic/oblique
+color -> #/rgb/rgba -> 마지막 속성 값 opacity
+text-decoration(텍스트 줄 표시/제거) -> none/underline/overline/line-through
+text-transform(대소문자 변형) -> none/capitalize(첫 글자만)/uppercase/lowercase
+text-align(Text 정렬) -> center/left(기본값)/right/justify(양쪽 정렬)
+text-shadow(Text 그림자 효과) -> [x-축 거리][y-축 거리][퍼짐 거리 정도][색상]/none
+
+/*목록 스타일*/
+목적 : 주로 Navigation에서 사용
+
+ul list-style (list-style-image:url/:before)에서 사용하기도 함
+-disc
+-circle
+-square
+-none
+
+ol list-style
+-decimal
+-decimal-leading-zero
+-lower-roman
+-upper-roman
+-lower-alpha
+-upper-alpha
+
+ol이랑 ul에는 기본적으로 padding이 들어가 있다
+
+가상 클래스 before,after -> 원하는 아이콘 넣어주기
+li:before {
+  content: '#'
+}
+
+/*CSS 자손선택자vs자식선택자*/
+/*부모요소vs자식요소*/
+
+자손은 바로 밑 뿐만 아니라 전체 밑
+자식은 바로 밑에
+div.parent(부모)/div.child(자식)
+div.parent(부모)/div.child(자식)/div(자손)
+div는 child의 자식
+
+자손선택자는 space
+div p
+자식 선택자는 >
+div > p
+
+/*CSS 박스 모델(border,border-radius)*/
+border-style: solid/dashed/dotted/double/groove/inset/outset
+border-width: px(추천)/%/thin/medium/thick
+border-color: color
+
+주로 사용하는 방법
+border: 2px solid blue;
+
+border-radius: px/%(추천)
+
+border-radius: px px px px
+
+/*상세 디자인을 위한 CSS 박스 모델(width,height,padding,margin,box-sizing)*/
+
+8.13
+/*CSS 박스 모델(width,height,padding,margin)*/
+box-sizing: border-box -> 초기 너비 값에 추가 된 패딩 , 경계 값 모두 포함 값 (width 와 height가 최종 길이 값이 됨)
+중요함!!(초기에 설정된 width와 height값을 기준으로 border padding을 넣는다)
+
+/*그림자 속성*/
+box-shadow: (inset) offset-x offset-y blur color  (필수 x) 필수 x축 이동거리 y축 이동거리 퍼짐정도 색상
+inset: 안쪽 그림자
+offset-x: +면 왼쪽에서 오른쪽
+offset-y: +면 위쪽에서 아래쪽
+blur: 그림자 부드럽게
+color: 그림자 색깔
+
+text-shadow : offset-x offset-y blur-radius color
+text-shadow에는 inset이 없다
+
+/*인라인 요소, 블록 요소, 인라인 블록 요소*/
+인라인 요소 - 한줄에 여러개 배치/기본 너비값은 컨텐츠의 너비값/크기값을 가질 수 없음/상하 마진은 가질 수 없음,좌우는 가능
+블록 요소 - 한줄에 한개만 배치/기본 너비값은 100%/크기값을 가질 수 있음/상하좌우 마진 가질 수 있음
+인라인 블록 요소 - 한줄에 여러개 배치/기본 너비값은 컨텐츠의 너비값/크기값을 가질 수 있음/상하 마진은 가질 수 있음
+display통해서 바꿀 수 있음
+
+/*float*/ 자식한테 적용
+float: none(기본값)/left/right
+margin: auto (요소 좌우 중앙에 놓기)
+float는 자식이 인라인,블록,인라인 블록 다 적용
+margin은 자식이 블록일때만 적용
+해결책 : inline-block,inline에서는 부모에게 text-align: center 적용
+block은 자기자신이 해결 / inline,inline-block은 부모가 해결
+
+float로 인하여 부모가 잃은 height는 overflow:hidden을 통하여 보완
+
+CSS 포지셔닝 (속성: clear)
+float 속성이 적용되면 다른 요소가 float 속성을 상속 받는데 이것을 해제
+float:left;
+clear:left/right/both;
+
+html5 -> section/article 태그 사용
+
+/*시멘틱 태그*/ html5
+header/section/article/footer
+가장 상위의 컨테이너 .container
+주제별 콘텐츠 영역 section
+헤더 영역(로고,메뉴,로그,검색) header
+저작권 footer
+콘텐츠 내용 넣기 article
+문서를 링크하는 탐색 영역 nav
+
+container -> section,header,footer -> article(안에 div)
+
+/*Position*/
+static,fixed,relative,absolute
+
+Relative -> 부모요소
+상대적인
+
+Absoulte -> 자식요소
+절대적인
+position: absolute 주면 부모의 height가 사라짐 float처럼
+
+left,right,top,bottom은 position 속성이 없으면 무용지물
+브라우저 크기에 관계없이 항상 수직 수평 중앙 정렬하기
+position: absolute;
+top: 50%;
+left: 50%;
+transfrom: translate(-50%,-50%); //이게 중요함(자기 자신의 크기에서 50% 씩 감소)
+
+/*가상클래스(hover),트랜지션(transition)*/
+transition 속성은 hover가 아닌 곳에 넣어줘야 마우스 오버와 마우스 빠질 때 모두 적용
+
+nth-child/nth-of-type
+first-child/last-child
+
+----------------------------------------
+Jquery
+body에 jquery script 넣기
+body 맨 밑에 넣기
+
+/*기본 구문 만들기*/
+$('선택자').함수(function(){
+  실행구문;
+});
+
+$('p').css({'display':'none'});
+$('.show-btn').click(function(){
+  $('p').css({'display': 'block'});
+});
+$('.hide-btn').click(function(){
+  $('p').css({'display': 'none'});
+});
+
+선택자 종류
+클래스/아이디/태그/this
+
+필수 함수 종류
+click/mouseenter/mouseleave
+
+필수 메서드 종류
+slideDown()/slideUp()/stop()/show()/hide()/fadeIn()
+fadeOut()/addClass()/removeClass()/children()/siblings()
+
+메서드 (지속시간 매개변수) -> 'fast'/'slow'/ms
+-이펙트
+show/hide/slideDown/slideUp/fadeIn(서서히 진해지기)/fadeOut(서서히 흐려지기)/stop/...toggle
+
+stop은 event queue를 다 삭제
+
+-클래스 제어
+addClass/removeClass/toggleClass
+
+-요소 탐색
+children/parent/siblings/find/next/prev
+
+8.14
+
+/*CSS Animation*/
+animation: keyframe duration delay(지연 유무 없으면 값 생략) linear(부드럽게) infinite(무한 반복);
+
+Animation 개발 순서
+1.CSS로 모양을 다 만들고
+2.keyframe 제작
+3.animation에 적용
+
+keyframe에서 animation할때 하나의 %에서 다른 %로 연결시 적용 속성이 같아야함
+
+animation-delay: s
+calc(100% - 10px)
+
+animation-direction: reverse -> 거꾸로 animation 행동 (반시계 등)
+
+border radius 찌그러짐 주기
+border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+
+hover 응용 잘 생각
+.square:hover span:nth-child(1)
+.square:hover span
+
+animation: circle 6s linear infinite;
+animation: circle 4s linear infinite;
+
+button에는 기본적으로 border가 있음
+제거하고 싶으면 하자
+
+자식이 부모 속성 상속 받기 inherit
+
+transition은 display에 적용 안됨
+opacity로 적용
+
+position이 absolute되면 어떤 요소든 inline-block됨
+
+before, after는 무조건 content로 시작
+
+visibility: hidden 기억 -> 자리에는 있으나 존재를 아예 없는셈 취급
+보이게 할려면 visibility: visible
+display: none -> 자리도 없앰
+
+z-index: 1; 앞으로 들어나게 하는것 3차원 생각하자
+
+transition은 속성이 자신에게도 존재할때 행해진다 시작점 -> 끝점
+
+transform: skew -> 비틀어짐
+
+box-shadow : x축 y축 퍼짐정도 색
+
+8.15
+before after는 inline 요소
+
+border에 animation을 줘서 크기 늘렸다가 줄였다가 못함 -> before,after 사용
+
+center 정렬 방법
+display: inline-block
+
+float: left;
+text-align: center
+
+부모 display: flex
+자식 flex: 1; text-align: center;
+------------------------------------
+display: flex 하면 div도 block에서 inline-block으로 바뀜
+
+부모 입장에서 overflow 되어있으면
+overflow: hidden
+
+relative가 absolute보다 우선 순위권 높다
+
+부모 요소 position: relative
+자식 요소(before, after) position: absolute
+
+html 내부에 자체 속성 만들기
+표준형식: data-xxx=" "
+css에서 사용
+ex) content: attr(data-xxx);
+
+img,input,form,button은 before/after 가질 수 없음
+
+<input type="text" placeholder="">
+
+css
+input[type=text]
+
+focus는 input에만 사용할 수 있는 가상 Class
+
+인접 선택자 -> 자기 밑에 있는 ele들 바꾸기(html 상 밑에 있어야함)
+
+gradient 주기
+background: linear-gradient(방향, 시작색상, 종류색상)
+
+animation-fill-mode : both -> animation이 끝나면 그 끝난 상태 유지
+이것을 안하면 다시 0%위치로 간다
+
+nth-child는 자식인 것만 하는것이 아니다
+해결책 : nth-of-type
+
+filter: grayscale(1) 회색으로 바꿈 색을(0-1) 안되는 브라우저 많음
+
+transform-origin: ->어디를 기준으로 잡고 무슨 행동하냐
+
+햄버거 버튼
+<input type="checkbox"> 이 형식으로
+그래야 클릭하고 또 클릭할때 돌아옴
+radio로 하면 한번 클릭하면 끝 변화를 못 줌
+id를 줘서 input의 자식과 같이 행동하게 한다
+checked -> 자동 check 상태
+
+label은 inline 값
+
++ 인접
+~ 형제
+
+radio 버튼은 동일한 name값을 가져야 같이 행동함
+
+position absolute가 되면 inlineblock이 되어서 width 안 주면 아무것도 안 보임
+그래야 text-align: center 가능
+
+8.17
+margin 0으로 하는 방법
+font-size: 0 가능
+
+position을 absolute, fixed 같은 것으로 바뀌면 붕떠서 부모의 height 사라짐
+이를 보완해야함
+
+label에 css 줄려면 부모가 선택되어 있어야함
+
+linear-gradient(방향,처음,나중)
+
+position relative 2개가 있으면 나중께 위로 올라옴
+
+background-attachment: fixed 배경이 고정된 느낌 주기
+

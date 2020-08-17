@@ -1,0 +1,73 @@
+body {
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+}
+
+input[id=trigger] {
+  display: none;
+}
+
+label[for=trigger] {
+  position: absolute;
+  /* border: 1px solid #000; */
+  width: 30px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .5s;
+}
+
+label[for=trigger] span {
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  transition: .3s;
+}
+
+label[for=trigger] span:nth-child(1){
+  top: 0;
+}
+label[for=trigger] span:nth-child(2){
+  top: 50%;
+  transform: translateY(-50%);
+}
+label[for=trigger] span:nth-child(3){
+  top: 100%;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background-color: #000000;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  right: -100%;
+  transition: .5s;
+}
+
+input[id=trigger]:checked + label[for=trigger] span:nth-child(1){
+  top: 50%;
+  transform: rotate(45deg);
+}
+input[id=trigger]:checked + label[for=trigger] span:nth-child(2){
+  opacity: 0;
+}
+input[id=trigger]:checked + label[for=trigger] span:nth-child(3){
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+input[id=trigger]:checked ~ .sidebar {
+  right: 0;
+}
+
+input[id=trigger]:checked + label[for=trigger] {
+  right: 310px;
+}
