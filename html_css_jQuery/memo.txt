@@ -1,0 +1,63 @@
+8.18
+filter: grayscale(1);
+img에 흑백 넣기
+filter: none; / filter: grayscale(0);
+돌아오기
+
+자기만의 속성주기
+data-xxx 이것과 다른 element의 id와 연결
+$('#'+$(this).attr('data-alt')).addClass('active');
+
+자신것 active class 넣고 나머지 빼기(siblings)
+$(this).addClass('active');
+$(this).siblings().removeClass('active');
+
+input 겉에 테두리 focus 없애기
+outline: none;
+
+해당 element 값 받기
+var num = $('#id').val();
+
+jQuery
+prev()/prevAll()/next()/nextAll() 알아두기
+index() -> 자신이 몇 번째인지(0부터 시작)
+
+수직 맞추기 vertical-align: middle
+
+입력 태그 (input tag) 는 before after 불가
+
+li 블록 요소
+
+hover 했을때 border를 무작정 넣으면 갑자기 block 값이 커져서 어색함
+이를 방지하기 위해 기존의 것에
+border-top: 2px solid transparent; 이런 식으로 transparent를 준다
+
+background-color랑 background 같이 못 넣음
+bacground: color url 반복 수직 수평 얼마나 떨어질건지
+
+opacity 0 그냥 투명해짐 그대로 있음
+display none 아예 없어지고 자신의 공간도 사라짐
+visibility hidden 없어지지만 공간은 유지
+
+input 누르는 것은 click이 아니라 focus
+
+placeholder를 없앤다고 display:none하면 안됨
+그 존재 자체가 사라짐 아예 그러면 복구 못함
+
+transition은 visibility:hidden/ display:none 로 적용 못함
+span은 inline 요소여서 width height 안 바뀜
+display로 바꾸자
+
+filter: blur(2px); 흐리게 하기 -> IE에 아직 적용 x
+
+
+작은 이미지 넣을때 before after도 사용 가능 content에 img 넣기
+content: url('images/logo-kakao.png');
+
+형제 특정하기
+$(this).siblings('.title').removeClass('active')
+
+JQuery의 slideDown slideUp등을 통하여 display none을 조작
+
+JQuery로 속성 변경
+$('.image img').attr('src',dataImage);

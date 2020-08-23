@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  color: #222222;
+  line-height: 1.6em;
+  background-color: #f4f4f4;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  width: 900px;
+  /* border: 1px solid #000; */
+}
+
+.tab-inner {
+  margin-top: 30px;
+}
+
+.btn {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.btn li {
+  width: 120px;
+  text-align: center;
+  /* border: 1px solid #000; */
+  float: left;
+  background-color: #eee;
+  cursor: pointer;
+  border-right: 1px solid #ddd;
+  padding: 5px;
+  border-top: 2px solid transparent;
+}
+
+.btn li:last-child {
+  width: 170px;
+  border-right: none;
+}
+
+.btn li:hover,
+.btn li.active {
+  background-color: white;
+  border-top: 2px solid crimson;
+}
+
+.tabs {}
+
+.tabs div {
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  /* height: 200px; */
+  display: none;
+}
+
+.tabs div.active {
+  display: block;
+}
+
+/* TAB CONTENT */
+.tabs div h2 {
+  text-align: center;
+}
+
+.tabs div img {
+  float: left;
+  margin-right: 10px;
+}
+
+.tabs div p {
+  overflow: hidden;
+}
+
+/* HEADING */
+
+.heading {}
+
+.heading h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.heading h1 span {
+  color: crimson;
+}
+
+.heading input[type=text] {
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background: #fff url(images/search-icon.png) no-repeat center left 5px;
+  background-size: 23px;
+  padding-left: 35px;
+}
+
+.heading input[type=text]::placeholder {
+  font-style: italic;
+  transition: .3s;
+}
+
+.heading input[type=text]:focus::placeholder {
+  opacity: 0;
+}

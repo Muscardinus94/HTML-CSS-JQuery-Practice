@@ -1,0 +1,33 @@
+
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header a {
+  background-color: teal;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+p {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.btn-gototop {
+  background-color: pink;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}

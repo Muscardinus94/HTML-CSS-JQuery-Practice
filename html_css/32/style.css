@@ -1,0 +1,47 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form input[type=checkbox] {
+  display: none;
+}
+
+form label {
+  display: block;
+}
+
+form label:before {
+  content: '\f00c';
+  font-family: fontawesome;
+  border: 1px solid #000;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 14px;
+  vertical-align: middle;
+  color: transparent;
+  font-size: 13px;
+  transition: .2s;
+  /* box-sizing: border-box; */
+}
+
+form input[type=checkbox]:checked + label:before {
+  background-color: crimson;
+  color: #fff;
+  border-color: transparent;
+}
+
+form input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
